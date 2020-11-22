@@ -22,4 +22,12 @@ class Controller extends BaseController
             "data" => $data,
         ], 200);
     }
+
+    protected function responseWithError($data)
+    {
+        return response()->json([
+            "status" => 500,
+            "data" => $data,
+        ], 500);
+    }
 }
